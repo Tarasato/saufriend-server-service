@@ -13,6 +13,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/user", userRoute);
 app.use("/myfriend", myfriendRoute);
+app.use("/images/user", express.static("images/user"));
+app.use("/images/myfriend", express.static("images/myfriend"));
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello from server on port" + PORT });
